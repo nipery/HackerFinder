@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder", "HackerFinder\HackerFinder.csproj", "{3EF97C70-F14D-46BE-B79F-6229A3615783}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder.Test", "HackerFinder.Test\HackerFinder.Test.csproj", "{6C1DAFB4-2140-4539-ABD3-2E5B2A99D2F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder.Acceptance", "HackerFinder.Acceptance\HackerFinder.Acceptance.csproj", "{97728CC3-6E6C-4B38-9B23-85D49108112E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3EF97C70-F14D-46BE-B79F-6229A3615783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EF97C70-F14D-46BE-B79F-6229A3615783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EF97C70-F14D-46BE-B79F-6229A3615783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C1DAFB4-2140-4539-ABD3-2E5B2A99D2F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C1DAFB4-2140-4539-ABD3-2E5B2A99D2F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C1DAFB4-2140-4539-ABD3-2E5B2A99D2F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C1DAFB4-2140-4539-ABD3-2E5B2A99D2F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97728CC3-6E6C-4B38-9B23-85D49108112E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97728CC3-6E6C-4B38-9B23-85D49108112E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97728CC3-6E6C-4B38-9B23-85D49108112E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97728CC3-6E6C-4B38-9B23-85D49108112E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
