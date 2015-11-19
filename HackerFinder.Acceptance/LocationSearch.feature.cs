@@ -77,7 +77,7 @@ namespace HackerFinder.Acceptance
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
- testRunner.When("I supply location chicago", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I supply location Wheeling,IL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 5
  testRunner.Then("I should have a user named Erik", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

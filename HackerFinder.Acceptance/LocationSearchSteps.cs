@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
@@ -10,11 +11,11 @@ namespace HackerFinder.Acceptance
     public class LocationSearchSteps
     {
         [When(@"I supply location (.*)")]
-        public void WhenISupplyLocation(string locationText)
+        public async Task WhenISupplyLocation(string locationText)
         {
             var searcher = new ProfileSearcher();
 
-            var profiles = searcher.GetProfilesForLocation(locationText);
+            var profiles = searcher.GetProfilesForLocation(locationText).Result;
 
             ScenarioContext.Current.Set<IEnumerable<Profile>>(profiles);
         }

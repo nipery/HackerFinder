@@ -50,7 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="PfofileSearcherTests\Class1.cs" />
+    <Compile Include="PfofileSearcherTests\GetProfilesForLocation_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
