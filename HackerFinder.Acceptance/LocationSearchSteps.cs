@@ -11,11 +11,11 @@ namespace HackerFinder.Acceptance
     public class LocationSearchSteps
     {
         [When(@"I supply location (.*)")]
-        public async Task WhenISupplyLocation(string locationText)
+        public void WhenISupplyLocation(string locationText)
         {
-            var searcher = new ProfileSearcher();
+            var searcher = new ProfileSearcher(new GithubInquisitor());
 
-            var profiles = searcher.GetProfilesForLocation(locationText).Result;
+            var profiles = searcher.GetProfilesForLocation(locationText);
 
             ScenarioContext.Current.Set<IEnumerable<Profile>>(profiles);
         }

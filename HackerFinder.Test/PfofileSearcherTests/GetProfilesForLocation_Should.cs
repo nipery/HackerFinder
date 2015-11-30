@@ -2,30 +2,46 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace HackerFinder.Test.PfofileSearcherTests
 {
     [TestClass]
     public class GetProfilesForLocationShould
     {
-        [TestMethod, TestCategory("Unit"), TestCategory("Proven")]
-        public async Task Return_Profile_With_FirstName_Set_to_Erik()
-        {
-            var target = new ProfileSearcher();
+        private Mock<IGithubInquisitor> _inquisitor; 
 
-            var firstProfile = await (target.GetProfilesForLocation("Wheeling,IL").ConfigureAwait(false));
-            var profile = firstProfile.First();
-            Assert.AreEqual("Erik", profile.FirstName);
+        [TestInitialize]
+        public void BeforeEachTest()
+        {
+            _inquisitor = new Mock<IGithubInquisitor>();
         }
 
         [TestMethod, TestCategory("Unit"), TestCategory("Proven")]
-        public async Task Return_EmptyEnumeration_For_Nonsence()
+        public void Return_EmptyEnumeration_For_Nonsence()
         {
-            var target = new ProfileSearcher();
+            _inquisitor.Setup(s => s.ExecuteUrlQuery(It.IsAny<string>())).Returns(string.Empty);
 
-            var profiles = await target.GetProfilesForLocation("{1A57363C-E976-4325-B4AF-EF3BDFB8752F}");
+            var target = new ProfileSearcher(_inquisitor.Object);
+
+            var profiles = target.GetProfilesForLocation("{1A57363C-E976-4325-B4AF-EF3BDFB8752F}");
 
             Assert.AreEqual(0,profiles.Count());
         }
+
+        [TestMethod, TestCategory("Unit"), TestCategory("Proven")]
+        public void Return_A_Profile_With_FirstName_Erik_When_GithubInquisitor_Returns_Result_With_String_erikdietrich()
+        {
+            _inquisitor.Setup(s => s.ExecuteUrlQuery(It.IsAny<string>())).Returns("erikdietrich");
+
+            var target = new ProfileSearcher(_inquisitor.Object);
+
+            var profiles = target.GetProfilesForLocation("Wheeling,IL");
+
+            Assert.AreEqual("Erik", profiles.First().FirstName);
+          
+        }
     }
+
+   
 }
